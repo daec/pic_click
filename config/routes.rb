@@ -1,5 +1,16 @@
 PicClick::Application.routes.draw do
-  resources :images
+  resources :pictures
+  # this is just a short cut for
+  # match "/pictures",          :to => "pictures#index",   :via => :get
+  # match "/pictures/:id",      :to => "pictures#show",    :via => :get
+  # match "/pictures/:id",      :to => "pictures#update",  :via => :put
+  # match "/pictures/:id/edit", :to => "pictures#edit",    :via => :get
+  # match "/pictures/:id",      :to => "pictures#destroy", :via => :delete
+  # match "/pictures/new",      :to => "pictures#new",     :via => :get
+  # match "/pictures",          :to => "pictures#create",  :via => :post
+  
+  root :to => 'pictures#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -49,7 +60,6 @@ PicClick::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'images#index'
 
   # See how all your routes lay out with "rake routes"
 

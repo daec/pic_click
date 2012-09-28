@@ -1,0 +1,4 @@
+<%= f.text_field :filename %>
+<% if e = @picture.errors[:filename] %>
+	<div class="form_error"><%= e.join("<br>") %></div>
+<% end %>

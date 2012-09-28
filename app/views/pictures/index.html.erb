@@ -1,0 +1,11 @@
+<%= link_to "make a new image", new_picture_path %>
+<ul>
+	<% @pictures.each do |pic| %>
+		<li>
+			<%= link_to pic.filename, picture_path(pic) %>
+			<%= link_to "(edit)", edit_picture_path(pic) %>
+			<%= link_to "(destroy)", picture_path(pic), :method => :delete %>
+		</li>
+	<% end %>
+	
+</ul>
